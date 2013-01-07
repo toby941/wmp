@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig
+ PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+ "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+    <settings cacheModelsEnabled="true" enhancementEnabled="true" lazyLoadingEnabled="true" maxRequests="128"
+     maxSessions="20" maxTransactions="10" useStatementNamespaces="true"/>
+    <typeHandler jdbcType="BLOB" javaType="[B" callback="org.springframework.orm.ibatis.support.BlobByteArrayTypeHandler" />
+    <sqlMap resource="com/mitian/airad/model/mapping/CORE_APP_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/CORE_CLIENT_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/CORE_MEMBER_INFO_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/CORE_NEWS_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/CORE_REPORT_SqlMap.xml"/>
+     <sqlMap resource="com/mitian/airad/model/mapping/DICTIONARY_GLOBAL_REGION_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/DICTIONARY_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/OSS_USER_MEMBER_MAPPING_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/SYS_CONFIG_SqlMap.xml"/>
+    
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_USER_TYPE_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_MENU_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_ROLE_MENU_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_ROLE_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_USER_INFO_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_USER_LOGON_HIS_SqlMap.xml"/>
+    
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_COMPANY_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_COMPANY_ATTACHED_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_ACTIVITY_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_MEMBER_CHECKIN_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_STOREFRONT_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_BOOKING_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_FEEDBACK_SqlMap.xml"/>
+    
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_COMPANY_APP_RELATION_SqlMap.xml"/>
+    
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_CLASS_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_CLASS_RELATION_SqlMap.xml"/>
+    
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_NEWS_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_EXHIBITION_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_GALLERY_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_CLOTH_EXHIBITION_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_IMAGE_SqlMap.xml"/>
+    
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_MEMBER_INFO_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_QUESTIONNAIRE_OPTION_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_QUESTIONNAIRE_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_QUESTIONNAIRE_SUBMIT_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_QUESTIONNAIRE_ITEM_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_COMPANY_EMPLOYEE_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_COMPANY_EMPLOYEE_MENU_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_COMPANY_CONFIG_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_EMPLOYEE_SqlMap.xml"/>
+    
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_ACCESS_TOKEN_INFO_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_CB_BUSINESS_SqlMap.xml"/>
+    <sqlMap resource="com/mitian/airad/model/mapping/EMMS_PRODUCT_SqlMap.xml"/>
+    
+     <!-- passbook begin -->
+     <sqlMap resource="com/mitian/airad/model/mapping/PASS_REGISTRATIONS_SqlMap.xml"/>
+     <sqlMap resource="com/mitian/airad/model/mapping/PASS_RECORD_SqlMap.xml"/>
+     <sqlMap resource="com/mitian/airad/model/mapping/PASS_DEVICES_SqlMap.xml"/>
+     <sqlMap resource="com/mitian/airad/model/mapping/EMMS_MAP_OFFSET_SqlMap.xml"/>
+     <sqlMap resource="com/mitian/airad/model/mapping/PASS_LOTTERY_SqlMap.xml"/>
+     <sqlMap resource="com/mitian/airad/model/mapping/PASS_PUSH_SqlMap.xml"/>
+     <!-- passbook end -->
+    
+</sqlMapConfig>

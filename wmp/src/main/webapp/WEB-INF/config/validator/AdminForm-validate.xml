@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form className="com.mitian.emms.admin.web.form.AdminForm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="validate-schema.xsd">
+    <fields> 
+        <fieldRule name="company.companyName">
+            <range type="length" min="0" max="80">
+                <errorTipZH>公司名称最大长度为80。</errorTipZH>
+             </range>
+            <pattern validator="required">
+                <errorTipZH>请填写公司名称。</errorTipZH>
+            </pattern>
+        </fieldRule> 
+          <fieldRule name="appName">
+            <range type="length" min="0" max="100">
+                <errorTipZH>应用名称最大长度为100。</errorTipZH>
+             </range>
+            <pattern validator="required">
+                <errorTipZH>请填写应用名称。</errorTipZH>
+            </pattern>
+        </fieldRule> 
+        <fieldRule name="company.industry">
+             <range type="length" min="0" max="40">
+                <errorTipZH>描述最大长度为40。</errorTipZH>
+             </range>
+        </fieldRule>
+        <fieldRule name="company.website">
+             <range type="length" min="0" max="80">
+                <errorTipZH>公司网址最大长度为80。</errorTipZH>
+             </range>
+        </fieldRule>
+        <fieldRule name="company.linkManName">
+             <range type="length" min="0" max="40">
+                <errorTipZH>联系人最大长度为40。</errorTipZH>
+             </range>
+        </fieldRule>
+        <fieldRule name="company.linkManEmail">
+             <range type="length" min="0" max="40">
+                <errorTipZH>Email最大长度为40。</errorTipZH>
+             </range>
+             <pattern validator="email">
+				<errorTipZH>请填写电子邮箱。</errorTipZH>
+			</pattern>
+        </fieldRule>
+        <fieldRule name="company.phone">
+             <range type="length" min="0" max="40">
+                <errorTipZH>联系电话最大长度为40。</errorTipZH>
+             </range>
+        </fieldRule>
+        <fieldRule name="category.className">
+             <range type="length" min="0" max="40">
+                <errorTipZH>栏目名称最大长度为40。</errorTipZH>
+             </range>
+             <pattern validator="required">
+                <errorTipZH>请填写栏目名称。</errorTipZH>
+             </pattern>
+        </fieldRule>
+        
+        <fieldRule name="category.sort">
+             <range type="length" min="0" max="40">
+                <errorTipZH>联系电话最大长度为40。</errorTipZH>
+             </range>
+             <range type="value" min="0" max="120">
+                <errorTipZH>排序位为0-120的数字</errorTipZH>
+             </range>
+             <pattern validator="integer">
+                <errorTipZH>排序位为数字。</errorTipZH>
+             </pattern>
+             <pattern validator="required">
+                <errorTipZH>请填写排序位。</errorTipZH>
+             </pattern>
+        </fieldRule>
+    </fields>
+    <actions>
+        <xcase name="doAddCompany">
+            <field name="company.companyName" />
+            <field name="company.industry" />
+            <field name="company.website" />
+             <field name="appName" />
+            <field name="company.linkManName" />
+            <field name="company.linkManEmail" />
+            <field name="company.phone" />
+        </xcase>
+        <xcase name="doEditCompany">
+            <field name="company.companyName" />
+            <field name="company.industry" />
+            <field name="company.website" />
+            <field name="company.linkManName" />
+            <field name="company.linkManEmail" />
+             <field name="appName" />
+            <field name="company.phone" />
+        </xcase>
+        <xcase name="doAddCategory">
+            <field name="category.className"/>
+            <field name="category.sort"/>
+        </xcase>
+        <xcase name="doEditCategory">
+            <field name="category.className"/>
+            <field name="category.sort"/>
+        </xcase>
+    </actions>
+</form>

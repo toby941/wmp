@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form className="com.mitian.emms.web.form.ClothExhibitionForm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="validate-schema.xsd">
+    <fields>
+        <fieldRule name="exhibition.title">
+            <range type="length" min="0" max="90">
+                <errorTipZH>定制服展示标题最大长度为90。</errorTipZH>
+             </range>
+            <pattern validator="required">
+                <errorTipZH>请填写栏目标题。</errorTipZH>
+            </pattern>
+        </fieldRule> 
+        <fieldRule name="picPath">
+            <pattern validator="required">
+                <errorTipZH>请上传图片。</errorTipZH>
+            </pattern>
+        </fieldRule> 
+        <fieldRule name="sort">
+             <pattern validator="required">
+                <errorTipZH>请填写排序位。</errorTipZH>
+             </pattern>
+        </fieldRule>
+    </fields>
+    <actions>
+    	<xcase name="doAddExhibition">
+        		<field name="exhibition.title"/>
+            <field name="picPath"/>
+        </xcase>
+        <xcase name="doUpdateExhibition">
+        		<field name="exhibition.title"/>
+            <field name="picPath"/>
+        </xcase>
+    </actions>
+</form>

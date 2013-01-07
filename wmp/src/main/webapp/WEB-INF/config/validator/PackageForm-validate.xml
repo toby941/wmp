@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form className="com.mitian.emms.web.form.PackageForm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="validate-schema.xsd">
+    <fields>
+        <fieldRule name="pkg.title">
+            <range type="length" min="0" max="90">
+                <errorTipZH>优惠套系最大长度为90。</errorTipZH>
+             </range>
+            <pattern validator="required">
+                <errorTipZH>请填写优惠套系。</errorTipZH>
+            </pattern>
+        </fieldRule> 
+        <fieldRule name="pkg.summaryContent">
+            <range type="length" min="0" max="90">
+                <errorTipZH>概要最大长度为90。</errorTipZH>
+             </range>
+        </fieldRule> 
+        <fieldRule name="picPath">
+            <pattern validator="required">
+                <errorTipZH>请上传栏目图片。</errorTipZH>
+            </pattern>
+        </fieldRule> 
+        <fieldRule name="sort">
+             <pattern validator="required">
+                <errorTipZH>请填写排序位。</errorTipZH>
+            </pattern>
+            <pattern validator="sortvalue">
+                <errorTipZH>请填写正确的排序位。</errorTipZH>
+            </pattern>
+            <range type="value" min="0" max="120">
+                <errorTipZH>排序值需在0-120范围内。</errorTipZH>
+            </range>
+        </fieldRule>
+    </fields>
+    <actions>
+    	<xcase name="doAddPackage">
+    		<field name="pkg.title"/>
+    		<field name="pkg.summaryContent"/>
+    		<field name="picPath"/>
+    		<field name="sort"/>
+        </xcase>
+        <xcase name="doUpdatePackage">
+    		<field name="pkg.title"/>
+    		<field name="pkg.summaryContent"/>
+    		<field name="picPath"/>
+    		<field name="sort"/>
+        </xcase>
+    </actions>
+</form>

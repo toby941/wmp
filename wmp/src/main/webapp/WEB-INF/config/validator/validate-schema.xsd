@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!--customBehavior -->
+	<xs:attributeGroup name="customBehavior">
+		<xs:attribute name="triggerOccasion" default="blur">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="blur"/>
+					<xs:enumeration value="change"/>
+					<xs:enumeration value="submit"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="tipStyle" default="tip">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="tip"/>
+					<xs:enumeration value="alert"/>
+					<xs:enumeration value="floatTip"/>
+					<xs:enumeration value="YFT"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!--fieldTip -->
+	<xs:attributeGroup name="fieldTip">
+		<xs:attribute name="focus" type="xs:string"/>
+		<xs:attribute name="succeed" type="xs:string"/>
+	</xs:attributeGroup>
+	<!--errorMsg-->
+	<xs:attributeGroup name="errorMsg">
+		<xs:attribute name="error" type="xs:string" use="optional"/>
+		<xs:attribute name="errorAR" type="xs:string" use="optional"/>
+		<xs:attribute name="errorBE" type="xs:string" use="optional"/>
+		<xs:attribute name="errorBG" type="xs:string" use="optional"/>
+		<xs:attribute name="errorCA" type="xs:string" use="optional"/>
+		<xs:attribute name="errorCS" type="xs:string" use="optional"/>
+		<xs:attribute name="errorDA" type="xs:string" use="optional"/>
+		<xs:attribute name="errorDE" type="xs:string" use="optional"/>
+		<xs:attribute name="errorEL" type="xs:string" use="optional"/>
+		<xs:attribute name="errorEN" type="xs:string" use="optional"/>
+		<xs:attribute name="errorES" type="xs:string" use="optional"/>
+		<xs:attribute name="errorET" type="xs:string" use="optional"/>
+		<xs:attribute name="errorFI" type="xs:string" use="optional"/>
+		<xs:attribute name="errorFR" type="xs:string" use="optional"/>
+		<xs:attribute name="errorGA" type="xs:string" use="optional"/>
+		<xs:attribute name="errorHI" type="xs:string" use="optional"/>
+		<xs:attribute name="errorHR" type="xs:string" use="optional"/>
+		<xs:attribute name="errorHU" type="xs:string" use="optional"/>
+		<xs:attribute name="errorIN" type="xs:string" use="optional"/>
+		<xs:attribute name="errorIS" type="xs:string" use="optional"/>
+		<xs:attribute name="errorIT" type="xs:string" use="optional"/>
+		<xs:attribute name="errorIW" type="xs:string" use="optional"/>
+		<xs:attribute name="errorJA" type="xs:string" use="optional"/>
+		<xs:attribute name="errorKO" type="xs:string" use="optional"/>
+		<xs:attribute name="errorLT" type="xs:string" use="optional"/>
+		<xs:attribute name="errorLV" type="xs:string" use="optional"/>
+		<xs:attribute name="errorMK" type="xs:string" use="optional"/>
+		<xs:attribute name="errorMS" type="xs:string" use="optional"/>
+		<xs:attribute name="errorMT" type="xs:string" use="optional"/>
+		<xs:attribute name="errorNL" type="xs:string" use="optional"/>
+		<xs:attribute name="errorNO" type="xs:string" use="optional"/>
+		<xs:attribute name="errorPL" type="xs:string" use="optional"/>
+		<xs:attribute name="errorPT" type="xs:string" use="optional"/>
+		<xs:attribute name="errorRO" type="xs:string" use="optional"/>
+		<xs:attribute name="errorRU" type="xs:string" use="optional"/>
+		<xs:attribute name="errorSK" type="xs:string" use="optional"/>
+		<xs:attribute name="errorSL" type="xs:string" use="optional"/>
+		<xs:attribute name="errorSQ" type="xs:string" use="optional"/>
+		<xs:attribute name="errorSR" type="xs:string" use="optional"/>
+		<xs:attribute name="errorSV" type="xs:string" use="optional"/>
+		<xs:attribute name="errorTH" type="xs:string" use="optional"/>
+		<xs:attribute name="errorTR" type="xs:string" use="optional"/>
+		<xs:attribute name="errorUK" type="xs:string" use="optional"/>
+		<xs:attribute name="errorVI" type="xs:string" use="optional"/>
+		<xs:attribute name="errorZH" type="xs:string" use="optional"/>
+	</xs:attributeGroup>
+	<!---->
+	<xs:attributeGroup name="compareAll">
+		<xs:attribute name="compareAll" type="xs:boolean" use="optional"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="for">
+		<xs:attribute name="for" type="xs:string" use="optional"/>
+	</xs:attributeGroup>
+	<!--range element-->
+	<xs:element name="range">
+		<xs:complexType>
+			<xs:attribute name="min" type="xs:string" use="optional"/>
+			<xs:attribute name="max" type="xs:string" use="optional"/>
+			<xs:attribute name="enum" type="xs:string" use="optional"/>
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="date"/>
+						<xs:enumeration value="value"/>
+						<xs:enumeration value="length"/>
+						<xs:enumeration value="size"/>
+						<xs:enumeration value="file"/>
+						<xs:enumeration value="fileType"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attributeGroup ref="errorMsg"/>
+			<xs:attributeGroup ref="compareAll"/>
+			<xs:attributeGroup ref="for"/>
+		</xs:complexType>
+	</xs:element>
+	<!--pattern element-->
+	<xs:element name="pattern">
+		<xs:complexType>
+			<xs:attribute name="validator" type="xs:string" use="required"/>
+			<xs:attribute name="reverse" type="xs:boolean" use="optional"/>
+			<xs:attributeGroup ref="compareAll"/>
+			<xs:attributeGroup ref="errorMsg"/>
+		</xs:complexType>
+	</xs:element>
+	<!--ajax element-->
+	<xs:element name="ajax">
+		<xs:complexType>
+			<xs:attribute name="url" use="required"/>
+			<xs:attribute name="passFlag" type="xs:string" use="required"/>
+			<xs:attributeGroup ref="errorMsg"/>
+		</xs:complexType>
+	</xs:element>
+	<!--compare element-->
+	<xs:element name="compare">
+		<xs:complexType>
+			<xs:attribute name="target" type="xs:string" use="required"/>
+			<xs:attribute name="comparison" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="eq"/>
+						<xs:enumeration value="ne"/>
+						<xs:enumeration value="gt"/>
+						<xs:enumeration value="lt"/>
+						<xs:enumeration value="ge"/>
+						<xs:enumeration value="le"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="type" type="xs:string"/>
+			<xs:attributeGroup ref="errorMsg"/>
+		</xs:complexType>
+	</xs:element>
+	<!--function element-->
+	<xs:element name="function">
+		<xs:complexType>
+			<xs:attribute name="name" use="required"/>
+			<xs:attributeGroup ref="errorMsg"/>
+		</xs:complexType>
+	</xs:element>
+	<!-- costomValidate element -->
+	<xs:element name="customValidate">
+		<xs:complexType>
+			<xs:attribute name="validator" type="xs:string" use="required"/>
+			<xs:attribute name="setting" type="xs:string" use="optional"/>
+			<xs:attributeGroup ref="errorMsg"/>
+		</xs:complexType>
+	</xs:element>
+	<!--fieldRule element-->
+	<xs:element name="fieldRule">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="range" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="pattern" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="ajax" minOccurs="0"/>
+				<xs:element ref="compare" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="function" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="customValidate" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+			<xs:attributeGroup ref="customBehavior"/>
+			<xs:attributeGroup ref="fieldTip"/>
+		</xs:complexType>
+	</xs:element>
+	<!-- fields element-->
+	<xs:element name="fields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="fieldRule" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="customBehavior"/>
+		</xs:complexType>
+	</xs:element>
+	<!--field element-->
+	<xs:element name="field">
+		<xs:complexType>
+			<xs:attribute name="name" use="required"/>
+			<xs:attributeGroup ref="customBehavior"/>
+			<xs:attributeGroup ref="fieldTip"/>
+		</xs:complexType>
+	</xs:element>
+	<!--xcase element-->
+	<xs:element name="xcase">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="field" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" use="required"/>
+			<xs:attributeGroup ref="customBehavior"/>
+		</xs:complexType>
+	</xs:element>
+	<!--actions element-->
+	<xs:element name="actions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="xcase" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!--form element-->
+	<xs:element name="form">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="fields"/>
+				<xs:element ref="actions"/>
+			</xs:sequence>
+			<xs:attribute name="className" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

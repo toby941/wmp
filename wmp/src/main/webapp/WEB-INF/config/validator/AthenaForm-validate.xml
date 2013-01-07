@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form className="com.mitian.emms.web.form.AthenaForm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="validate-schema.xsd">
+    <fields>
+        <fieldRule name="activity.name">
+            <range type="length" min="0" max="90">
+                <errorTipZH>活动名最大长度为90。</errorTipZH>
+             </range>
+            <pattern validator="required">
+                <errorTipZH>请填写活动名。</errorTipZH>
+            </pattern>
+        </fieldRule> 
+        <fieldRule name="activity.content">
+            <pattern validator="required">
+                <errorTipZH>上传海报图片</errorTipZH>
+            </pattern>
+        </fieldRule>
+        
+        <fieldRule name="employee.name">
+            <pattern validator="required">
+                <errorTipZH>请填写员工名</errorTipZH>
+            </pattern>
+            <range type="length" min="0" max="8">
+                <errorTipZH>员工名过长。</errorTipZH>
+            </range>
+        </fieldRule>
+        <fieldRule name="employee.type">
+            <pattern validator="required">
+                <errorTipZH>请选择员工身份</errorTipZH>
+            </pattern>
+        </fieldRule>
+        <fieldRule name="employee.grade">
+            <pattern validator="required">
+                <errorTipZH>请填写员工级别</errorTipZH>
+            </pattern>
+            <range type="length" min="0" max="10">
+                <errorTipZH>级别过长。</errorTipZH>
+            </range>
+        </fieldRule>
+        <fieldRule name="employee.introduction">
+            <pattern validator="required">
+                <errorTipZH>请填写员工简介</errorTipZH>
+            </pattern>
+            <range type="length" min="0" max="200">
+                <errorTipZH>简介过长。</errorTipZH>
+            </range>
+        </fieldRule>
+        <fieldRule name="employee.photo">
+            <pattern validator="required">
+                <errorTipZH>请上传员工图片</errorTipZH>
+            </pattern>
+        </fieldRule>
+        
+        <fieldRule name="product.name">
+            <pattern validator="required">
+                <errorTipZH>请填写产品名</errorTipZH>
+            </pattern>
+            <range type="length" min="0" max="20">
+                <errorTipZH>产品名过长。</errorTipZH>
+            </range>
+        </fieldRule>
+        
+        <fieldRule name="product.proType">
+            <pattern validator="required">
+                <errorTipZH>请选择产品类型</errorTipZH>
+            </pattern>
+        </fieldRule>
+        
+        <fieldRule name="product.brand">
+            <pattern validator="required">
+                <errorTipZH>请选择产品品牌</errorTipZH>
+            </pattern>
+        </fieldRule>
+        
+        <fieldRule name="product.unitPrice">
+            <pattern validator="required">
+                <errorTipZH>正确商品价格</errorTipZH>
+            </pattern>
+        </fieldRule>
+        
+        <fieldRule name="product.description">
+            <pattern validator="required">
+                <errorTipZH>请填写商品简介</errorTipZH>
+            </pattern>
+            <range type="length" min="0" max="200">
+                <errorTipZH>简介过长。</errorTipZH>
+            </range>
+        </fieldRule>
+        
+        <fieldRule name="product.color">
+            <pattern validator="required">
+                <errorTipZH>请上传略缩图图片</errorTipZH>
+            </pattern>
+        </fieldRule>
+        
+         <fieldRule name="product.pic">
+            <pattern validator="required">
+                <errorTipZH>请上传商品图片</errorTipZH>
+            </pattern>
+        </fieldRule>
+        
+    </fields>
+    <actions>
+    	<xcase name="activityUpdate">
+    		<field name="activity.name"/>
+        <field name="activity.content"/>    
+      </xcase>
+      <xcase name="employeeUpdate">
+        <field name="employee.name"/>
+        <field name="employee.grade" />
+        <field name="employee.type"/>
+        <field name="employee.introduction"/>
+        <field name="employee.photo"/>
+      </xcase>
+      <xcase name="productUpdate">
+        <field name="product.name"/>
+        <field name="product.proType" />
+        <field name="product.brand"/>
+        <field name="product.unitPrice"/>
+        <field name="product.description"/>
+        <field name="product.color"/>
+        <field name="product.pic"/>
+      </xcase>
+    </actions>
+    
+</form>

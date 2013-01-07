@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form className="com.mitian.emms.web.form.EmmsNewsForm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="validate-schema.xsd">
+    <fields>
+        <fieldRule name="news.title">
+            <range type="length" min="0" max="90">
+                <errorTipZH>新闻标题最大长度为90。</errorTipZH>
+             </range>
+            <pattern validator="required">
+                <errorTipZH>请填写新闻标题。</errorTipZH>
+                <errorTipJA>ニュースタイトルを入力して下さい</errorTipJA>
+            </pattern>
+        </fieldRule> 
+        <fieldRule name="news.sTitle">
+            <range type="length" min="0" max="90">
+                <errorTipZH>子标题最大长度为90。</errorTipZH>
+             </range>
+        </fieldRule> 
+        <fieldRule name="news.summaryContent">
+            <range type="length" min="0" max="90">
+                <errorTipZH>摘要最大长度为90。</errorTipZH>
+             </range>
+        </fieldRule> 
+        <fieldRule name="content">
+            <pattern validator="required">
+                <errorTipZH>请填写新闻内容。</errorTipZH>
+             </pattern>
+             <range type="length" min="0" max="5000">
+                <errorTipZH>内容最大长度为5000。</errorTipZH>
+             </range>
+        </fieldRule> 
+        <fieldRule name="publishTime">
+            <pattern validator="required">
+                <errorTipZH>请填写新闻发布时间。</errorTipZH>
+             </pattern>
+        </fieldRule>
+        <fieldRule name="thumbPicPath">
+            <pattern validator="required">
+                <errorTipZH>请上传新闻小图。</errorTipZH>
+            </pattern>
+        </fieldRule> 
+        <fieldRule name="sort">
+             <pattern validator="required">
+                <errorTipZH>请填写排序位。</errorTipZH>
+            </pattern>
+            <pattern validator="sortvalue">
+                <errorTipZH>请填写正确的排序位。</errorTipZH>
+            </pattern>
+            <range type="value" min="0" max="120">
+                <errorTipZH>排序值需在0-120范围内。</errorTipZH>
+            </range>
+        </fieldRule>
+    </fields>
+    <actions>
+    	<xcase name="doAddNews">
+    		<field name="news.title"/>
+    		<field name="news.summaryContent"/>
+    		<field name="content"/>
+    		<field name="thumbPicPath"/>
+    		<field name="publishTime"/>
+        </xcase>
+        <xcase name="doUpdateNews">
+    		<field name="news.title"/>
+    		<field name="news.summaryContent"/>
+    		<field name="content"/>
+    		<field name="thumbPicPath"/>
+    		<field name="publishTime"/>
+        </xcase>
+    </actions>
+</form>

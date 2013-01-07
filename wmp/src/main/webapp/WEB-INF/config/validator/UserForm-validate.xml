@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form className="com.mitian.emms.web.form.UserForm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="validate-schema.xsd">
+	<fields>
+	<fieldRule name="userName">
+			<range type="length" min="0" max="50">
+				<errorTipZH>登陆名最大长度为50。</errorTipZH>
+			</range>
+			<pattern validator="required">
+				<errorTipZH>请填写登陆名。</errorTipZH>
+			</pattern>
+			<pattern validator="email">
+				<errorTipZH>请填写有效登陆名。</errorTipZH>
+			</pattern>
+		</fieldRule>
+		<fieldRule name="emmsUserInfo.name">
+			<range type="length" min="0" max="50">
+				<errorTipZH>登陆名最大长度为50。</errorTipZH>
+			</range>
+			<pattern validator="required">
+				<errorTipZH>请填写登陆名。</errorTipZH>
+			</pattern>
+			<pattern validator="email">
+				<errorTipZH>请填写有效登陆名。</errorTipZH>
+			</pattern>
+		</fieldRule>
+		<fieldRule name="email">
+			<range type="length" min="0" max="50">
+				<errorTipZH>邮箱最大长度为50。</errorTipZH>
+			</range>
+			<pattern validator="required">
+				<errorTipZH>请填写邮箱。</errorTipZH>
+			</pattern>
+			<pattern validator="email">
+				<errorTipZH>请填写有效邮箱。</errorTipZH>
+			</pattern>
+		</fieldRule>
+		<fieldRule name="employeeId">
+			<range type="length" min="0" max="25">
+				<errorTipZH>工号最大长度为25。</errorTipZH>
+			</range>
+			<pattern validator="number">
+				<errorTipZH>请填写有效工号。</errorTipZH>
+			</pattern>
+			<pattern validator="required">
+				<errorTipZH>请填写邮箱。</errorTipZH>
+			</pattern>
+		</fieldRule>
+		<fieldRule name="name">
+			<range type="length" min="0" max="50">
+				<errorTipZH>姓名最大长度为50。</errorTipZH>
+			</range>
+			<pattern validator="required">
+				<errorTipZH>请填写姓名。</errorTipZH>
+			</pattern>
+		</fieldRule>
+		<fieldRule name="oldPassword">
+			<range type="length" min="6" max="20">
+				<errorTipZH>密码长度为6-20。</errorTipZH>
+			</range>
+			<pattern validator="required">
+				<errorTipZH>请填写原密码。</errorTipZH>
+			</pattern>
+			<pattern validator="password">
+				<errorTipZH>亲，密码字符候选队列是0-9，A-Z,a-z,-哦</errorTipZH>
+			</pattern>
+		</fieldRule>
+		<fieldRule name="password">
+			<range type="length" min="6" max="20">
+				<errorTipZH>密码长度为6-20。</errorTipZH>
+			</range>
+			<pattern validator="required">
+				<errorTipZH>请填写密码。</errorTipZH>
+			</pattern>
+			<pattern validator="password">
+				<errorTipZH>亲，密码字符候选队列是0-9，A-Z,a-z,-哦</errorTipZH>
+			</pattern>
+		</fieldRule>
+		<fieldRule name="passwords">
+			<pattern validator="required">
+				<errorTipZH>请填写确认密码。</errorTipZH>
+			</pattern>
+			<compare target="password" comparison="eq">
+				<errorTipZH>两次密码不一致。</errorTipZH>
+			</compare>
+		</fieldRule>
+		<fieldRule name="roleId">
+			<pattern validator="required">
+				<errorTipZH>请选择角色。</errorTipZH>
+			</pattern>
+		</fieldRule>
+		<fieldRule name="comId">
+			<pattern validator="required">
+				<errorTipZH>请选择公司。</errorTipZH>
+			</pattern>
+		</fieldRule>
+	</fields>
+	<actions>
+		<xcase name="addUser">
+			<field name="email" />
+			<field name="employeeId" />
+			<field name="name" />
+			<field name="password" />
+			<field name="passwords" />
+			<field name="roleId" />
+			<field name="comId" />
+		</xcase>
+		<xcase name="editUser">
+			<field name="emmsUserInfo.name" />
+			<field name="roleId" />
+		</xcase>
+		<xcase name="doLogon">
+			<field name="userName" />
+			<field name="password" />
+		</xcase>
+		<xcase name="passwordUpdate">
+			<field name="oldPassword" />
+			<field name="password" />
+			<field name="passwords" />
+		</xcase>
+	</actions>
+</form>

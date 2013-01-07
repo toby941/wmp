@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form className="com.mitian.emms.manage.web.form.CompanyForm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="validate-schema.xsd">
+    <fields>
+        <fieldRule name="storefront.name">
+            <range type="length" min="0" max="80">
+                <errorTipZH>门店名称最大长度为80。</errorTipZH>
+             </range>
+            <pattern validator="required">
+                <errorTipZH>请填写门店名称。</errorTipZH>
+            </pattern>
+        </fieldRule> 
+        <fieldRule name="category.sort">
+             <range type="length" min="0" max="40">
+                <errorTipZH>联系电话最大长度为40。</errorTipZH>
+             </range>
+             <range type="value" min="0" max="120">
+                <errorTipZH>排序位为0-120的数字</errorTipZH>
+             </range>
+             <pattern validator="integer">
+                <errorTipZH>排序位为数字。</errorTipZH>
+             </pattern>
+             <pattern validator="required">
+                <errorTipZH>请填写排序位。</errorTipZH>
+             </pattern>
+        </fieldRule>
+        <fieldRule name="activity.name">
+             <pattern validator="required">
+                <errorTipZH>请填写活动名称</errorTipZH>
+             </pattern>
+        </fieldRule>
+        <fieldRule name="activity.checkinPoint">
+             <pattern validator="required">
+                <errorTipZH>请选择签到点经纬度</errorTipZH>
+             </pattern>
+        </fieldRule>
+        <fieldRule name="activity.checkinPointAddress">
+             <pattern validator="required">
+                <errorTipZH>请填写签到点地址</errorTipZH>
+             </pattern>
+        </fieldRule>
+        <fieldRule name="activity.description">
+             <pattern validator="required">
+                <errorTipZH>请填写描述</errorTipZH>
+             </pattern>
+        </fieldRule>
+        <fieldRule name="activity.range">
+             <pattern validator="integer">
+                <errorTipZH>请填写正确的范围</errorTipZH>
+             </pattern>
+        </fieldRule>
+        <fieldRule name="activity.startTime">
+             <pattern validator="required">
+                <errorTipZH>请选择开始时间</errorTipZH>
+             </pattern>
+        </fieldRule>
+        <fieldRule name="activity.endTime">
+             <pattern validator="required">
+                <errorTipZH>请选择结束时间</errorTipZH>
+             </pattern>
+        </fieldRule>
+    </fields>
+    <actions>
+      <xcase name="doAddActivity">
+        <field name="activity.name"/>
+        <field name="activity.checkinPoint" />
+        <field name="activity.checkinPointAddress" />
+        <field name="activity.description" />
+      </xcase>
+    </actions>
+</form>

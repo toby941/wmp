@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form className="com.mitian.emms.web.form.PassbookForm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="validate-schema.xsd">
+  <fields>
+  <fieldRule name="pushMessage">
+      <range type="length" min="0" max="20">
+        <errorTipZH>信息最长为20字符。</errorTipZH>
+        <errorTipJA>情報は、最長20文字です。</errorTipJA>
+      </range>
+      <pattern validator="required">
+        <errorTipZH>请填写相应信息。</errorTipZH>
+        <errorTipJA>適切な情報を入力してください。</errorTipJA>
+      </pattern>
+    </fieldRule>
+    <fieldRule name="pushDate">
+      <pattern validator="required">
+        <errorTipZH>请填写相应信息。</errorTipZH>
+        <errorTipJA>適切な情報を入力してください。</errorTipJA>
+      </pattern>
+    </fieldRule>
+  </fields>
+  <actions>
+    <xcase name="doAddPassPush">
+      <field name="pushMessage" />
+      <field name="pushDate" />
+    </xcase>
+  </actions>
+</form>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<validators xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="validator-schema.xsd">
+	<patternValidatorList>
+		<patternValidator name="required" pattern=".*\S+.*" />
+		<patternValidator name="hsCode" pattern="\d{0,8}" />
+		<patternValidator name="asciicode" pattern="[\u0000-\u00ff]*" />
+		<patternValidator name="unasciicode" pattern=".*[^\u0000-\u00ff]+.*" />
+		<patternValidator name="asciispecial" pattern="[¥±×‘¯—≤≥§ωαβγδηθλμνξπστφχΣΦΩ∈‰÷≠ρ∨∧∑∞≡√·Δ´©®²³½¼ºCºF°£¢€ø\p{Graph}\p{Space}]*" />
+		<patternValidator name="integer" pattern="^-?[0-9]\d*$" />
+		<patternValidator name="integer1" pattern="^[1-9]\d*$" />
+		<patternValidator name="integer2" pattern="^-[1-9]\d*$" />
+		<patternValidator name="letter" pattern="^[A-Za-z]+$" />
+		<patternValidator name="uppercase" pattern="^[A-Z]+$" />
+		<patternValidator name="lowercase" pattern="^[a-z]+$" />
+		<patternValidator name="email"
+			pattern="[a-zA-Z0-9][\w\.\-]*@[a-zA-Z0-9][\w\.\-]*\.[a-zA-Z][a-zA-Z\.]*" />
+		<patternValidator name="url"
+			pattern="^[a-zA-z]+://(\w+(-\w+)*)(\.(\w+(-\w+)*))*(\?\S*)?$" />
+		<patternValidator name="telephone" pattern="^[0-9\-]+$"/>
+		<patternValidator name="keyword_en" pattern="[¥±×‘¯—≤≥§ωαβγδηθλμνξπστφχΣΦΩ∈‰÷≠ρ∨∧∑∞≡√·Δ´©®²³½¼ºCºF°£¢€ø\p{Graph}\p{Space}&amp;&amp;[^,]]*"/>
+		<patternValidator name="keyword_cn" pattern="[^,]*[^\p{Graph}]+[^,]*"/>
+		<patternValidator name="userName" pattern="^[a-zA-Z0-9\-]+$"/>
+		<patternValidator name="password" pattern="^[a-zA-Z0-9\-]+$"/>
+		<patternValidator name="asciiDescription" pattern="[ⅠⅡⅢ≈∮ˆ¬ Γικψ∫∩∪¥±×‘¯—≤≥§ωαβγδηθλμνξπστφχΣΦΩ∈‰÷≠ρ∨∧∑∞≡√·Δ´©®²³½¼ºCºF°£¢€ø\p{Graph}\p{Space}]*"/>
+		<patternValidator name="ecatalogName" pattern="[a-zA-Z0-9\w\.\-,_\(\)%\s]*"/>
+		<patternValidator name="fuckOff" pattern=".*\\bfuck\\b.*"/>
+		<patternValidator name="number" pattern="^(0|[1-9][0-9]*)$" />
+    <patternValidator name="sortvalue" pattern="^(0|[1-9]\d*)$"/>
+    <!-- <patternValidator name="price" pattern="^[0-9]+/.[0-9]{0,2}$"/> -->
+	</patternValidatorList>
+</validators>

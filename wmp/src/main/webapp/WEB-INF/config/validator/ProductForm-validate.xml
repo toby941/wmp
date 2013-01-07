@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form className="com.mitian.emms.web.form.ProductForm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="validate-schema.xsd">
+    <fields>
+        <fieldRule name="name">
+            <range type="length" min="0" max="50">
+                <errorTipZH>名称最大长度为50。</errorTipZH>
+             </range>
+            <pattern validator="required">
+                <errorTipZH>请填写名称。</errorTipZH>
+            </pattern>
+        </fieldRule> 
+        <fieldRule name="model">
+             <range type="length" max="800">
+                <errorTipZH>型号最大长度为800。</errorTipZH>
+             </range>
+        </fieldRule> 
+        <fieldRule name="color">
+            <range type="length" max="800">
+                <errorTipZH>颜色最大长度为800。</errorTipZH>
+             </range>
+        </fieldRule>
+    </fields>
+    <actions>
+      <xcase name="doAdd">
+            <field name="name"/>
+            <field name="model"/>
+            <field name="color"/>
+      </xcase>
+      <xcase name="doUpdate">
+            <field name="name"/>
+            <field name="model"/>
+            <field name="color"/>
+      </xcase>
+    </actions>
+</form>
